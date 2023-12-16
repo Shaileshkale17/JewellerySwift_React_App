@@ -1,0 +1,11 @@
+.Navber{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    margin: 0 2rem;
+}
+.Navber .Maide-side img{
+    width: 21rem;
+}

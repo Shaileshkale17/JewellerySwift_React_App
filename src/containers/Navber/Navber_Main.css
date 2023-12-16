@@ -1,0 +1,26 @@
+:root {
+  ---text: hwb(0 2% 98%);
+  ---texthover: #0505054f;
+}
+
+.Changing_page {
+  margin: 2rem;
+}
+.Changing_page ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Changing_page ul li {
+  list-style: none;
+}
+.Changing_page ul li a {
+  text-decoration: none;
+  color: var(---text);
+  cursor: pointer;
+}
+.Changing_page ul li a:hover {
+  text-decoration: none;
+  color: var(---texthover);
+  cursor: pointer;
+}
