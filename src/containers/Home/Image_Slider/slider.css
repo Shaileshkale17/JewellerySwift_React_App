@@ -1,0 +1,19 @@
+.constainer_Style {
+  height: 36rem;
+  position: relative;
+}
+.constainer_Style .description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: white;
+  gap: 2rem;
+}
+.constainer_Style .description h1 {
+    font-size: 4rem;
+}
+.constainer_Style .description p {
+    font-size: 2rem;
+}
