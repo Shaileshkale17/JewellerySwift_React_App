@@ -19,6 +19,8 @@ function Slider() {
     backgroundPosition: "center",
     backgroundSize: "cover",
     height: "100%",
+    backgroundRepeat: "no-repeat",
+    backgroundAttachment: "fixed",
   };
   return (
     <div className="constainer_Style">

@@ -1,0 +1,15 @@
+.main_Box_Left {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 2rem 0;
+}
+
+.main_Box_Left img {
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
+}
+.main_Box_Left p {
+  width: 28rem;
+}

@@ -1,0 +1,28 @@
+.contaniner-Offer {
+  height: 20rem;
+  background-color: aquamarine;
+}
+.contaniner-Offer .contaniner-Offer-box {
+  text-align: left;
+  padding: 2rem 0;
+  overflow: hidden;
+  margin: 2rem 0;
+  text-align: center;
+}
+.align{
+  text-align: center;
+  margin-top: 2rem;
+
+}
+
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  gap: 70px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: hidden;
+}

@@ -1,6 +1,7 @@
 .constainer_Style {
   height: 36rem;
   position: relative;
+  
 }
 .constainer_Style .description {
   display: flex;

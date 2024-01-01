@@ -1,0 +1,17 @@
+.main_Box_Rigth {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row-reverse;
+  margin: 2rem 0;
+}
+
+
+.main_Box_Rigth img{
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+}
+.main_Box_Rigth p{
+    width: 28rem;
+}
