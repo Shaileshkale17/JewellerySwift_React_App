@@ -1,0 +1,34 @@
+{
+  "upcomingJewellery": [
+    {
+      "Id": 1,
+      "urlImage": "https://example.com/image1.jpg",
+      "Description": "Exquisite gold necklace with embedded diamonds,\nperfect for special occasions or evening events.",
+      "date": "2024-02-15"
+    },
+    {
+      "Id": 2,
+      "urlImage": "https://example.com/image2.jpg",
+      "Description": "Elegant silver bracelet adorned with sapphires\nand intricate detailing, a timeless accessory.",
+      "date": "2024-03-10"
+    },
+    {
+      "Id": 3,
+      "urlImage": "https://example.com/image3.jpg",
+      "Description": "Unique rose gold earrings featuring\nsparkling emeralds, a symbol of sophistication.",
+      "date": "2024-04-05"
+    },
+    {
+      "Id": 4,
+      "urlImage": "https://example.com/image4.jpg",
+      "Description": "Statement piece: Platinum ring with\na large ruby centerpiece, a bold and stylish choice.",
+      "date": "2024-05-20"
+    },
+    {
+      "Id": 5,
+      "urlImage": "https://example.com/image5.jpg",
+      "Description": "Delicate pearl necklace with a vintage touch,\nan exquisite addition to any jewelry collection.",
+      "date": "2024-06-15"
+    }
+  ]
+}

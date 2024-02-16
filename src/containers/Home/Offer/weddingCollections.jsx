@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react";
 import Card from "../../card/Cards";
 import "./Offer.css";
 import images from "../../../assets/image_container/beautiful-engagement-ring-gemstone-box-260nw-2048190650.webp"
-function Offer({ Title }) {
+function WeddingCollections({ Title }) {
   const [OfferDatas, setOfferDatas] = useState([]);
   
 
   useEffect(() => {
     const storedData = localStorage.getItem("DisplayData");
     const DisplayData = JSON.parse(storedData);
-    console.log(DisplayData[0].topOffers)
-    setOfferDatas(DisplayData[0].topOffers);
+    console.log(DisplayData[0].weddingCollections);
+    setOfferDatas(DisplayData[0].weddingCollections);
   }, [setOfferDatas]);
   return (
     <div className="container-Offer">
@@ -50,4 +50,4 @@ function Offer({ Title }) {
   );
 }
 
-export default Offer;
+export default WeddingCollections;

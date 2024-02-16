@@ -25,6 +25,10 @@
   justify-content: space-around;
   height: 4rem;
 }
+.card-box .upcoming_jewellery-box-text .MainPrice {
+  display: flex;
+  gap: 2rem;
+}
 .card-box .upcoming_jewellery-box-text h5 {
   font-size: 1.2rem;
 }
@@ -32,4 +36,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.linkClass{
+  text-decoration: none;
+  color: black;
+}
+
+
+.textdecoration{
+  text-decoration: line-through;
 }

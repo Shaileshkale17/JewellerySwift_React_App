@@ -1,0 +1,22 @@
+.product{
+    width: calc(100% - 310px);
+    padding: 1rem 2rem;
+    position: relative;
+}
+.product h1{
+    text-align: center;
+}
+.product .productCard{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+
+.align-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}

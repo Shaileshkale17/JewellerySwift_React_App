@@ -1,0 +1,22 @@
+<div className="cardContainer">
+            {OfferData.topOffers.map((collection, index) => (
+              <div key={index}>
+                <h2>{collection}</h2>
+                <div className="card-container">
+                  {collection.map((item) => (
+                    <div key={item.id} className="card-item">
+                      <img src={item.imageUrl} alt={item.title} />
+                      <h3>{item.title}</h3>
+                      <p>{item.description}</p>
+                      <p>Rating: {item.rating}</p>
+                      <p>Date: {item.date}</p>
+                      <p>Discount: {item.offers.discountPercentage}%</p>
+                      <p>
+                        Free Shipping: {item.offers.freeShipping ? "Yes" : "No"}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>

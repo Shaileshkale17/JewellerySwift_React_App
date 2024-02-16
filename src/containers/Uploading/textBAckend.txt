@@ -1,0 +1,57 @@
+const express = require('express');
+const mongoose = require('mongoose');
+const multer = require('multer');
+
+const app = express();
+const port = 5000;
+
+// Connect to MongoDB (replace 'your_database_url' with your MongoDB URL)
+mongoose.connect('your_database_url', { useNewUrlParser: true, useUnifiedTopology: true });
+
+// Create a Mongoose schema for your product
+const productSchema = new mongoose.Schema({
+  title: String,
+  description: String,
+  image: String,
+  rating: String,
+  date: String,
+  price: Number,
+  discountPercentage: Number,
+  freeShipping: Boolean,
+  images: [String],
+});
+
+const Product = mongoose.model('Product', productSchema);
+
+// Set up multer for handling file uploads
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
+
+// Endpoint to handle form submissions
+app.post('/api/upload-product', upload.array('Image'), async (req, res) => {
+  try {
+    const images = req.files.map((file) => file.buffer.toString('base64'));
+
+    const newProduct = new Product({
+      title: req.body.title,
+      description: req.body.description,
+      image: req.body.image, // This needs to be updated based on how you want to handle the main image
+      rating: req.body.rating,
+      date: req.body.date,
+      price: req.body.price,
+      discountPercentage: req.body.discountPercentage,
+      freeShipping: req.body.freeShipping === 'True',
+      images: images,
+    });
+
+    await newProduct.save();
+    res.status(201).json({ message: 'Product uploaded successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});

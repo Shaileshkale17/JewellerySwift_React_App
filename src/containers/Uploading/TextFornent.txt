@@ -1,0 +1,95 @@
+import React, { useState } from 'react';
+import axios from 'axios';
+
+const ProductForm = () => {
+  const [formData, setFormData] = useState({
+    title: '',
+    description: '',
+    image: null,
+    rating: 0,
+    date: '',
+    price: 0,
+    discountPercentage: 0,
+    freeShipping: false,
+    images: [],
+  });
+
+  const handleChange = (e) => {
+    const { name, value, type, checked, files } = e.target;
+
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: type === 'checkbox' ? checked : type === 'file' ? files : value,
+    }));
+  };
+
+  const handleImageUpload = (e) => {
+    // Handle multiple image uploads
+    const files = Array.from(e.target.files);
+    setFormData((prevData) => ({
+      ...prevData,
+      images: [...prevData.images, ...files],
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Create form data to send to the server
+    const productData = new FormData();
+    Object.entries(formData).forEach(([key, value]) => {
+      if (key === 'images') {
+        value.forEach((image) => productData.append('images', image));
+      } else {
+        productData.append(key, value);
+      }
+    });
+
+    // Send data to the API
+    try {
+      const response = await axios.post('your-api-endpoint', productData);
+      console.log('API response:', response.data);
+      // Reset the form after successful submission if needed
+      setFormData({
+        title: '',
+        description: '',
+        image: null,
+        rating: 0,
+        date: '',
+        price: 0,
+        discountPercentage: 0,
+        freeShipping: false,
+        images: [],
+      });
+    } catch (error) {
+      console.error('Error submitting product:', error);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      {/* Add your form fields here */}
+      <label>
+        Product Title:
+        <input type="text" name="title" value={formData.title} onChange={handleChange} />
+      </label>
+      {/* Add other form fields similarly */}
+      
+      {/* Image upload */}
+      <label>
+        Product Image:
+        <input type="file" name="image" onChange={handleChange} />
+      </label>
+      
+      {/* Multiple image upload */}
+      <label>
+        Upload Five Images:
+        <input type="file" name="images" multiple onChange={handleImageUpload} />
+      </label>
+
+      <button type="submit">Upload Product</button>
+    </form>
+  );
+};
+
+export default ProductForm;

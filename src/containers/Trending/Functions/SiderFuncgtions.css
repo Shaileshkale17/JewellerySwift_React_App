@@ -1,0 +1,23 @@
+.Functions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20rem;
+    /* background-color: blue; */
+}
+.Functions ul{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 2rem 0;
+    gap: 1rem;
+    list-style: none;
+}
+.Functions ul .star{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+

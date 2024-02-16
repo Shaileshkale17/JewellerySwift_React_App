@@ -1,10 +1,13 @@
 import React from 'react'
 
-function search() {
-
+function search(setsearch) {
+// Adding reudx to search results
   return (
     <div>
-       Search Jewellery
+       <form>
+        <label htmlFor="search">Search item</label>
+        <input type="search" name="search" id="search" onChange={setsearch}/>
+       </form>
     </div>
   )
 }

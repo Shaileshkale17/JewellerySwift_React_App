@@ -9,75 +9,72 @@ import {
 } from "react-router-dom";
 import Layout from "./Layout.jsx";
 import Home from "./containers/Home/Home.jsx";
-import "./main.css"
+import "./main.css";
 import Trending from "./containers/Trending/Trending.jsx";
-import Loader from "./containers/loader/loader.jsx";
+import Loader from "./containers/loader/Loader.jsx";
 // seding the Data to localstorage
 import OfferData from "./DataContainers/OfferData.js";
 import ImageData from "./DataContainers/ImageData.js";
-
-
-
-
-
-// const router = createBrowserRouter(
-//   createRoutesFromElements(
-//   <Route path="/" element={<Layout/>}>
-//     <Router path="/" element={<Home/>} />
-
-//   </Route>
-// ))
+import upcomingJewellery from "./DataContainers/upcomingJewellery.js";
+import Bridal from "./containers/Bridal/Bridal.jsx";
+import Error from "./containers/Error/Error";
+import SingleProduct from "./containers/Product/SingleProduct.jsx";
+import Products from "./containers/Uploading/products.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
-    loader: async () => <Loader />,
+    errorElement: <Error />,
     children: [
       {
         path: "",
         element: <Home />,
-        loader: async () => <Loader />,
+        errorElement: <Error />,
       },
       {
         path: "/Trending",
         element: <Trending />,
-        loader: async () => <Loader />,
       },
       {
         path: "/Bridal",
-        element: <Trending />,
-        loader: async () => <Loader />,
+        element: <Bridal />,
       },
       {
         path: "/Designers",
         element: <Trending />,
-        loader: async () => <Loader />,
       },
       {
         path: "/TimePieces",
         element: <Trending />,
-        loader: async () => <Loader />,
       },
       {
         path: "/Jewellery",
         element: <Trending />,
-        loader: async () => <Loader />,
       },
       {
         path: "/Services",
         element: <Trending />,
-        loader: async () => <Loader />,
       },
       {
         path: "/Contact",
         element: <Trending />,
-        loader: async () => <Loader />,
       },
       {
         path: "/About",
         element: <Loader />,
-        loader: async () => <Loader />,
+      },
+      {
+        path: "/:id",
+        element: <SingleProduct />,
+      },
+      {
+        path: "/:Trending/:id",
+        element: <SingleProduct />,
+      },
+      {
+        path: "/Uploading",
+        element: <Products />,
       },
     ],
   },
